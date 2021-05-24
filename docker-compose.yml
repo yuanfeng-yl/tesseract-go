@@ -1,0 +1,16 @@
+version: "3"
+services:
+  tesseract_go:
+    build: .
+    ports:
+      - "5000:5000"
+
+  tesseract_server:
+    image: "hertzg/tesseract-server:latest"
+    ports:
+      - "8884:8884"
+
+  tesseract_redis:
+    image: "redis"
+    ports:
+      - "6379:6379"
